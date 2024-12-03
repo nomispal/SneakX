@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sneakx/components/bottom_navbar.dart';
+import 'package:sneakx/components/my_drawer.dart';
 import 'package:sneakx/pages/shope_page.dart';
 
 import 'cart_page.dart';
@@ -12,7 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   // this selected index is set to contorl the navigation bar
   int _selectedindex = 0;
 
@@ -22,11 +22,9 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _selectedindex = index;
     });
-
   }
 
   // pages to display
-
   final List<Widget> _pages = [
     // shop page
     const ShopePage(),
@@ -41,6 +39,18 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigationBottomBar(index),
       ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: Builder(builder: (context) =>
+            IconButton(
+              onPressed: () {Scaffold.of(context).openDrawer();},
+              icon: const Icon(
+                Icons.menu,
+              ),
+            ),
+        ),
+    ),
+      drawer: MyDrawer(),
       body: _pages[_selectedindex],
     );
   }
