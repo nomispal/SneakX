@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home_page.dart';
+
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
 
@@ -11,12 +13,13 @@ class IntroPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //logo
               Padding(
                 padding: const EdgeInsets.all(90.0),
                 child: Image.asset(
-                    "lib/images/logoo.png",
+                  "lib/images/logoo.png",
                   height: 100,
                 ),
               ),
@@ -25,8 +28,8 @@ class IntroPage extends StatelessWidget {
               Text(
                 "Just do it",
                 style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold
                 ),
               ),
 
@@ -35,33 +38,41 @@ class IntroPage extends StatelessWidget {
               Text(
                 "SneakX delivers innovative products, experinces and services to inspire athletes",
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 18
+                    color: Colors.grey,
+                    fontSize: 18
                 ),
                 textAlign: TextAlign.center,
               ),
 
               SizedBox(height: 28),
               //star now button
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                borderRadius: BorderRadius.circular(25)
+              GestureDetector(
+                onTap: () => Navigator.push
+                  (context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
                 ),
-                child:
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(14)
+                  ),
+                  child:
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 130.0,vertical: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 140.0,vertical: 28),
                     child: Text(
                       "Shop now",
                       style: TextStyle(
-                        color: Colors.white
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
+                ),
               ),
-
             ],
-
           ),
         ),
       ),

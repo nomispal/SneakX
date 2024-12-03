@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sneakx/pages/intropage.dart';
+import 'package:sneakx/pages/intro_page.dart';
 
 void main() {
   runApp(const MyApp());
