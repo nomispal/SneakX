@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sneakx/models/shoe.dart';
 
 import '../components/my_shoe_tile.dart';
 
@@ -54,14 +55,23 @@ class ShopePage extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(height: 12),
+
 
         Expanded(
             child: ListView.builder(
+              itemCount: 4,
+                scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return ShoeTile();
+                  Shoe shoe = Shoe(
+                      price: "45",
+                      description: "Air Force 1",
+                      imagePath: "lib/images/AirForce1LE.png",
+                      name: "Air Force 1 "
+                  );
+                  return ShoeTile(shoe: shoe,);
                 },)
         ),
+
       ],
     );
   }
