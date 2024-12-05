@@ -15,51 +15,56 @@ class ShoeTile extends StatelessWidget {
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-       children: [
-
-         ClipRect(
-
-             child: Image.asset(shoe.imagePath,),
-         ),
-
-         Padding(
-           padding: const EdgeInsets.only(left: 22.0),
-           child: Row(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         children: [
+          Image.asset("lib/images/AirForce1LE.png",
+          height: 250,),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.center,
              children: [
-               Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   Text(shoe.name,
-                   style: TextStyle(
-                     fontSize: 20,
-                     fontWeight: FontWeight.bold,
-                   ),),
-
-                   Text(shoe.price+" \$",
-                   style: TextStyle(fontSize:18,color: Colors.grey[900]),),
-                 ],
-               ),
-               // button to add to cart
-               Container(
-                 padding: EdgeInsets.all(24),
-                 decoration: BoxDecoration(
-                   color: Colors.black,
-                   borderRadius: BorderRadius.only(
-                     topLeft: Radius.circular(15)
-                   ),
-                 ),
-                 child: Icon(Icons.add,
-                 color: Colors.white
-                 ),
-               ),
+               Text(shoe.description)
              ],
            ),
-         ),
-       ],
-      ),
+
+
+           Padding(
+             padding: const EdgeInsets.only(left: 22.0,),
+             child: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                 Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                     Text(shoe.name,
+                     style: TextStyle(
+                       fontSize: 20,
+                       fontWeight: FontWeight.bold,
+                     ),),
+
+                     Text(shoe.price+" \$",
+                     style: TextStyle(fontSize:18,color: Colors.grey[900]),),
+                   ],
+                 ),
+                 // button to add to cart
+                 Container(
+                   padding: EdgeInsets.all(24),
+                   decoration: BoxDecoration(
+                     color: Colors.black,
+                     borderRadius: BorderRadius.only(
+                       topLeft: Radius.circular(15)
+                     ),
+                   ),
+                   child: Icon(Icons.add,
+                   color: Colors.white
+                   ),
+                 ),
+               ],
+             ),
+           ),
+         ],
+        ),
+
 
     );
   }
