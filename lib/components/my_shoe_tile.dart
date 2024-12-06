@@ -18,7 +18,8 @@ class ShoeTile extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
          children: [
-          Image.asset("lib/images/AirForce1LE.png",
+          Image.asset(
+          shoe.imagePath,
           height: 250,),
            Row(
              mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +49,7 @@ class ShoeTile extends StatelessWidget {
                  ),
                  // button to add to cart
                  Container(
-                   padding: EdgeInsets.all(24),
+                   padding: EdgeInsets.all(10),
                    decoration: BoxDecoration(
                      color: Colors.black,
                      borderRadius: BorderRadius.only(
