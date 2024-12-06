@@ -4,8 +4,28 @@ import 'package:provider/provider.dart';
 import '../components/my_shoe_tile.dart';
 import '../models/cart.dart';
 
-class ShopePage extends StatelessWidget {
+class ShopePage extends StatefulWidget {
   const ShopePage({super.key});
+
+  @override
+  State<ShopePage> createState() => _ShopePageState();
+}
+
+
+class _ShopePageState extends State<ShopePage> {
+  // add shoe to cart
+  void addShoeToCart(Shoe shoe){
+    Provider.of<Cart>(context,listen: false).addItemToCart(shoe);
+
+    // Show user shoe added to cart
+    showDialog(
+        context: context,
+        builder:(context) => AlertDialog(
+          title: Text("Shoe Added Sucessfully"),
+          content: Text("Check Your Cart"),
+        ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,14 +79,16 @@ class ShopePage extends StatelessWidget {
               ),
 
 
-
               Expanded(
                   child: ListView.builder(
                     itemCount: 5,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       Shoe shoe = value.getShoeList()[index];
-                      return ShoeTile(shoe: shoe,);
+                      return ShoeTile(
+                        shoe: shoe,
+                        onTap:() => addShoeToCart(shoe),
+                      );
                     },)
               ),
 
