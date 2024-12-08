@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sneakx/models/shoe.dart';
 import 'package:provider/provider.dart';
+import 'package:toasty_box/toasty_box.dart';
 import '../components/my_shoe_tile.dart';
 import '../models/cart.dart';
 
@@ -18,12 +19,11 @@ class _ShopePageState extends State<ShopePage> {
     Provider.of<Cart>(context,listen: false).addItemToCart(shoe);
 
     // Show user shoe added to cart
-    showDialog(
-        context: context,
-        builder:(context) => AlertDialog(
-          title: Text("Shoe Added Sucessfully"),
-          content: Text("Check Your Cart"),
-        ),
+    ToastService.showToast(
+      context,
+      leading: Icon(Icons.check_box,color: Colors.white,),
+      message: "Shoe added to cart 🥂!",
+      backgroundColor: Colors.green[400]
     );
   }
 
