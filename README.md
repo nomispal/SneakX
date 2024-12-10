@@ -7,8 +7,12 @@ SneakX, a mobile app designed for sneaker enthusiasts who live, breathe, and wal
 
 👟What is SneakX? SneakX is more than just an app; it’s your one-stop shop for all things sneakers:
 
-🛒 Browse and shop the latest sneaker collections. 📦 Add your favorites to the cart and checkout seamlessly.
+🛒 Browse and shop the latest sneaker collections.
+
+📦 Add your favorites to the cart and checkout seamlessly.
+
 🔄 Manage your sneaker wishlist and cart with ease.
+
 🎯 Why SneakX? As a sneakerhead, I realized there’s a gap in finding an intuitive, user-friendly app that brings the latest designs to my fingertips. That’s where SneakX comes in!
 
 💻 Built With: This project is powered by Flutter for a seamless cross-platform experience, and Provider ensures smooth state management. Check out the app and let me know what you think. Suggestions and feedback are always welcome! 😊
