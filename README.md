@@ -2,6 +2,7 @@
 
 Sneakers Ecommerce App
 
+
 ## Getting Started
 SneakX, a mobile app designed for sneaker enthusiasts who live, breathe, and walk in style! 🚀
 
